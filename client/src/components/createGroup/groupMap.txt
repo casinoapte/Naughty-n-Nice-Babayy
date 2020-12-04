@@ -1,0 +1,39 @@
+
+
+GROUP DATABASE INFO
+
+{
+
+"_id" : ObjectId("5fc68128bfc85ed4cde2f751"),
+"name" : "The boiz",
+"password" : "123",
+"membersNum" : 12,
+"memberNames:" ["Casino Apte", "Ryan Witherspoon", "Colby Trahan", Joshua, Charlie]
+
+}
+
+
+USER DATABASE INFO 
+
+{
+
+"_id" : ObjectId("5fc68128bfc85ed4cde2f751"),
+"name" : "Casino Apte",
+"email" : "Casino@brazzers.com
+"password" : "iloveapples",
+"Groups": ["5fc68128bfc85ed4cde2f751", "5fccde2f751"]
+"Wishlist": [
+    {
+        name: "Socks",
+        desc: "ankle socks",
+        link: "wtv"
+        group: "5fc68128bfc85ed4cde2f751"
+    },
+    {
+        name: "Skis",
+        desc: "QST106",
+        link: "wtv"
+        group: "5fccde2f751"
+    }
+    ]
+}
