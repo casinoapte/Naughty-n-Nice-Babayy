@@ -13,9 +13,7 @@ export default function FindGroup() {
 
     const findGroup = async (e) => {
         e.preventDefault()
-        const { data } = await API.findGroup(groupRef.current.value, passwordRef.current.value)
-        .then(RouteChange())
-        console.log(data);
+        RouteChange()
     }
 
     // Redirect Page to Main Group //
@@ -24,7 +22,6 @@ export default function FindGroup() {
 
     const RouteChange = async () => {
         const { data } = await API.findGroup(groupRef.current.value, passwordRef.current.value)
-        console.log(data);
         let path = "/" + data._id + "/" + data.name
         history.push(path);
     }

@@ -5,7 +5,8 @@ import DisplayMembers from './DisplayMembers';
 
 
 
-export default function AddMembers(groupName) {
+export default function AddMembers() {
+
     const { pathname } = useLocation();
 
     // Use State and Hooks Setting //

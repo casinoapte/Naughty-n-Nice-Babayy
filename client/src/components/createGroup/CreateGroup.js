@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import API from "../../utils/API"
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function CreateGroup() {
 
