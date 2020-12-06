@@ -5,7 +5,7 @@ import DisplayMembers from './DisplayMembers';
 
 
 
-export default function AddMembers() {
+const AddMembers = () => {
 
     const { pathname } = useLocation();
 
@@ -59,3 +59,5 @@ export default function AddMembers() {
         </div>
     )
 }
+
+export default AddMembers;

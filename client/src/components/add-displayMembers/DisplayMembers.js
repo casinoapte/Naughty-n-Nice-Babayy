@@ -35,7 +35,7 @@ export default function DisplayMembers() {
 
                     <ol>
                         <li className="name-display">
-                            {res.data.user[0]}
+                            {/* {res.data.user[0]} */}
                         </li>
                     </ol>
                 </div>
