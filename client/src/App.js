@@ -6,14 +6,11 @@ import MainGroupPage from "./pages/main-group-page/MainGroupPage";
 
 function App() {
   return (
-  <Router>
+    <Router>
     <>
-    
     <Route exact path="/" component={CreateGroup}></Route>
     <Route exact path="/" component={FindGroup}></Route>
-
     <Route exact path="/:_id/:name" component={MainGroupPage}></Route>
-  
     </>
   </Router>
   )

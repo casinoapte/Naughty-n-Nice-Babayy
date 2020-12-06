@@ -1,14 +1,10 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import API from "../../utils/API"
 import { useHistory, useParams } from "react-router-dom";
 
 function CreateGroup() {
 
     // Use State and Hooks Setting //
-
-    const passwordRef = useRef()
-    const groupRef = useRef()
-
     const [GroupObject, setGroupObject] = useState({ name: "", password: "", membersName: [], membersNum: "" });
 
     const handleInputChange = (e) => {
@@ -32,7 +28,7 @@ function CreateGroup() {
     const history = useHistory();
 
     const RouteChange = async () => {
-        const {data} = await API.findGroup(groupRef.current.value, passwordRef.current.value)
+        const {data} = await API.findGroup(GroupObject.name, GroupObject.password)
         console.log(data);
         let path = "/" + data._id + "/" + data.name
         history.push(path);
@@ -49,12 +45,12 @@ function CreateGroup() {
                         {/* Group Name  */}
 
                         <h4>Group Name:</h4>
-                        <input type="text" name="name" ref={groupRef} onChange={handleInputChange} />
+                        <input type="text" name="name" onChange={handleInputChange} />
 
                         {/* Group Password  */}
 
                         <h4>Group Password:</h4>
-                        <input type="password" name="password" ref={passwordRef} onChange={handleInputChange} />
+                        <input type="password" name="password"onChange={handleInputChange} />
 
                         {/* Group Members  */}
 
