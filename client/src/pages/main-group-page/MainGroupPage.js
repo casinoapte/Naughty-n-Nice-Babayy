@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from "react-router-dom";
 import AddMembers from "../../components/add-displayMembers/AddMembers"
 
-export default function MainGroupPage() {
+const MainGroupPage = (props) => {
 
     // Use State and Hooks Setting //
 
@@ -34,7 +34,7 @@ export default function MainGroupPage() {
                 {/* Add and Display Members Component */}
 
                 <div className="col-3 members-component">
-                    <AddMembers />
+                    <AddMembers/>
                 </div>
 
                 {/* YOUR wishlist Component */}
@@ -52,3 +52,5 @@ export default function MainGroupPage() {
         </div>
     )
 }
+
+export default MainGroupPage;

@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
 
 
-export default function DisplayMembers() {
+export default function DisplayMembers(props) {
 
     // Use State and Hooks Setting //
 
     const { pathname } = useLocation();
 
+    // const [MemberList, ListMembers] = useState({
+        // names: []
+    // })
 
     // External JS functions //
 
@@ -16,11 +19,20 @@ export default function DisplayMembers() {
         const groupId = pathname.split("/")[1];
         API.findGroup2(groupId)
             .then((res => {
-                console.log(res.data.user);
+                // ListMembers(res.data.user)
+                // console.log(ListMembers);
             }))
     }
 
     retrieveMembers()
+
+    const displayMembers = (users) => {
+
+    //     const names = users.map(user => {
+    //         console.log(users);
+    //     })
+
+    }
 
 
     // Visual Rendering //
@@ -35,7 +47,7 @@ export default function DisplayMembers() {
 
                     <ol>
                         <li className="name-display">
-                            {res.data.user[0]}
+
                         </li>
                     </ol>
                 </div>
