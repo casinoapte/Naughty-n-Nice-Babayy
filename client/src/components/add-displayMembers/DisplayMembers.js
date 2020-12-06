@@ -5,17 +5,13 @@ class DisplayMembers extends React.Component {
 
     // Use State and Hooks Setting //
 
-    state = {
-        // members: 
-    }
+    
 
 
 
     // External JS functions //
 
-    displayMembers = (id) => {
-        console.log(this.state.members);
-    }
+   
 
     // Visual Rendering //
 
@@ -27,14 +23,13 @@ class DisplayMembers extends React.Component {
                 <div className="row members-display-modal">
                     <div className="col-12">
 
-                        <h2>Members:</h2>
+                        <h2 className="display-members-title">Members:</h2>
 
                         <ol>
                             <li className="name-display">
                                 {/* {this.state} */}
                             </li>
                         </ol>
-                        <Addmembers/>
                     </div>
                 </div>
             </div>
