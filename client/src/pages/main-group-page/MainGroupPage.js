@@ -2,6 +2,7 @@ import React from 'react'
 import DisplayMembers from "../../components/add-displayMembers/DisplayMembers"
 import { useParams } from "react-router-dom";
 import API from "../../utils/API"
+import AddMembers from "../../components/add-displayMembers/AddMembers"
 
 export default function MainGroupPage() {
 
@@ -35,7 +36,7 @@ export default function MainGroupPage() {
                 {/* Add and Display Members Component */}
 
                 <div className="col-3 members-component">
-                    <DisplayMembers />
+                    <AddMembers />
                 </div>
 
                 {/* YOUR wishlist Component */}

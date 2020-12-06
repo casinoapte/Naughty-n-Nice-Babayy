@@ -17,7 +17,7 @@ router.get("/group/:name/:pw", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  db.Group.findByIdAndUpdate(req.params.id, { $push: { membersName: req.body} })
+  db.Group.findByIdAndUpdate(req.params.id, { $push: { user: req.body} })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 });

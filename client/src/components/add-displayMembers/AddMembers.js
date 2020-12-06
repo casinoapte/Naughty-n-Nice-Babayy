@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
+import DisplayMembers from './DisplayMembers';
 
 
 
@@ -36,6 +37,8 @@ export default function AddMembers(groupName) {
             <div className="row add-members-modal">
                 <div className="col-12">
 
+                    <DisplayMembers />
+
                     <h4 className="add-title-main">Add members:</h4>
 
                     <form>
@@ -46,9 +49,7 @@ export default function AddMembers(groupName) {
                         <input type="text" name="name" onChange={handleInputChange}></input>
 
                         <button className="add-member-button" onClick={addMember}>Add</button>
-                        {/* <Link to="/signup" className="btn btn-primary">Sign up</Link> */}
-
-
+            
                     </form>
 
                 </div>
