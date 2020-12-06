@@ -16,16 +16,13 @@ router.get("/group/:name/:pw", (req, res) => {
     });
 });
 
-router.put("/add/:name", (req, res) => {
-  db.Group.findOneandUpdate({ name: req.params.name }, req.body)
+router.put("/:id", (req, res) => {
+  db.Group.findByIdAndUpdate(req.params.id, { $push: { membersName: req.body} })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 });
 
-
-
 // Matches with "/api/group"
-
 router.route("/").post(groupsController.create);
 
 

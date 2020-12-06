@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
 
 
 
 export default function AddMembers(groupName) {
-
+    const { pathname } = useLocation();
 
     // Use State and Hooks Setting //
 
@@ -22,7 +23,8 @@ export default function AddMembers(groupName) {
     const addMember = (e) => {
         e.preventDefault();
         console.log(MemberString)
-        API.addMembers(MemberString)
+        const groupId = pathname.split("/")[1];
+        API.addMembers(MemberString, groupId)
             .catch(err => console.log(err));
     }
 

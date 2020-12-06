@@ -21,7 +21,7 @@ export default {
       })
   },
 
-  
+
 
 
 
@@ -29,8 +29,8 @@ export default {
 
   // Adding members to the membersName array in Group Database //
 
-  addMembers: function (memberName) {
-    return axios.post("/api/add/", memberName)
+  addMembers: function (memberName, id) {
+    return axios.put("/api/groups/" + id, memberName)
   },
 
   // Finding members to use as props for display component //
