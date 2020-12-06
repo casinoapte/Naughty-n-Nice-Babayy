@@ -16,7 +16,6 @@ router.get("/:name/:pw", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  console.log(req.params.id);
   db.Group.findOne({
     _id: req.params.id,
   })

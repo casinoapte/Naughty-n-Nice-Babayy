@@ -21,22 +21,14 @@ export default {
       })
   },
 
+  // Find group by ID - DONE //
+
   findGroup2: function (id) {
     return axios.get("/api/groups/" + id)
       .then(res => {
         return res
       })
   },
-
-  // Find group by ID //
-
-  // findID: function (groupID, id) {
-  //   return axios.get("/api/groups/find/" + id, groupID)
-  //     .then(res => {
-  //       return res
-  //     })
-  // },
-
 
   // Adding members to the membersName array in Group Database - DONE //
 
