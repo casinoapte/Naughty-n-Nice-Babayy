@@ -1,5 +1,4 @@
-
-import React, { useRef } from "react";
+import React from "react";
 import CreateGroup from "./createGroup/CreateGroup";
 import FindGroup from "./findGroup/FindGroup";
 // import API from "../../../utils/API";
