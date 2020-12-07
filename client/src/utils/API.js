@@ -36,6 +36,13 @@ export default {
     return axios.put("/api/groups/" + id, memberName)
   },
 
+  // Adding Description to the Group Database //
+
+  addDescription: function (description, id) {
+    return axios.put("/api/groups/description/" + id, description)
+  },
+
+
   // Finding members to use as props for display component //
 
   findUser: function (name, id) {

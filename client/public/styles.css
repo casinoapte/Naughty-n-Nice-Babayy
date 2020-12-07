@@ -10,18 +10,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* ////////////////////////////// */
         /* Component CSS */
 /* ////////////////////////////// */
@@ -146,4 +134,17 @@
 
 .modal-wishlist, h6 {
     color: gray;
+}
+
+.modal-description {
+    color: gray;
+}
+
+.description-modal-title {
+    margin-left: -380px;
+}
+
+.description-modal-textarea {
+    width: 470px;
+    margin-left: -5px;
 }
