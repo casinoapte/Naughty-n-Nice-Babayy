@@ -11,7 +11,8 @@ function App() {
     <>
     <HomePage/>
     <Route exact path="/" component={GroupForms}></Route>
-    <Route exact path="/:_id/:name" component={MainGroupPage}></Route>
+    <Route exact path="/:_id/:name" component={MainGroupPage}
+    ></Route>
     </>
   </Router>
   )
