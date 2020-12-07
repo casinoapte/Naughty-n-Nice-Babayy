@@ -3,6 +3,7 @@ import DisplayMembers from "../../components/add-displayMembers/DisplayMembers"
 import { useParams } from "react-router-dom";
 import API from "../../utils/API"
 import AddMembers from "../../components/add-displayMembers/AddMembers"
+import GroupDescription from '../../components/GroupDescription/GroupDescription';
 
 export default function MainGroupPage() {
 
@@ -48,7 +49,7 @@ export default function MainGroupPage() {
                 {/* Description Component */}
 
                 <div className="col-3 description-component">
-
+                    <GroupDescription/>
                 </div>
             </div>
         </div>

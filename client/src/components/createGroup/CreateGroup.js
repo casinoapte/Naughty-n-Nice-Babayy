@@ -5,7 +5,7 @@ import { useHistory, useParams } from "react-router-dom";
 function CreateGroup() {
 
     // Use State and Hooks Setting //
-    const [GroupObject, setGroupObject] = useState({ name: "", password: "", membersName: [], membersNum: "" });
+    const [GroupObject, setGroupObject] = useState({ name: "", password: "", description:"", membersName: [], membersNum: "" });
 
     const handleInputChange = (e) => {
         e.preventDefault()
@@ -51,6 +51,11 @@ function CreateGroup() {
 
                         <h4>Group Password:</h4>
                         <input type="password" name="password"onChange={handleInputChange} />
+
+                        <h4>Group Description:</h4>
+                        <input type="description" name="description"onChange={handleInputChange} />
+
+                        
 
                         {/* Group Members  */}
 

@@ -7,7 +7,8 @@ const groupSchema = new Schema({
   membersNum: { type: Number, required: true },
   user: {type: Array, required: false},
   draw: {type: Boolean, default: false},
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  description: { type: String, required: false}
 });
 
 const Group = mongoose.model("Group", groupSchema);
