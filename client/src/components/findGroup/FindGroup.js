@@ -1,53 +1,88 @@
-import React, { useRef } from 'react';
-import API from '../../utils/API';
+import React, { useRef } from "react";
+import API from "../../utils/API";
 import { useHistory } from "react-router-dom";
+import { Card } from "react-bootstrap";
+import "./style.css";
 
 export default function FindGroup() {
+  // Use State and Hooks Setting //
+  const passwordRef = useRef();
+  const groupRef = useRef();
 
-    // Use State and Hooks Setting //
-    const passwordRef = useRef()
-    const groupRef = useRef()
+  // External JS functions //
 
+  const findGroup = async (e) => {
+    e.preventDefault();
+    RouteChange();
+  };
 
-    // External JS functions //
+  // Redirect Page to Main Group //
 
-    const findGroup = async (e) => {
-        e.preventDefault()
-        RouteChange()
-    }
+  const history = useHistory();
 
-    // Redirect Page to Main Group //
+  const RouteChange = async () => {
+    const { data } = await API.findGroup(
+      groupRef.current.value,
+      passwordRef.current.value
+    );
+    let path = "/" + data._id + "/" + data.name;
+    history.push(path);
+  };
 
-    const history = useHistory();
+  // Visual Rendering //
 
-    const RouteChange = async () => {
-        const { data } = await API.findGroup(groupRef.current.value, passwordRef.current.value)
-        let path = "/" + data._id + "/" + data.name
-        history.push(path);
-    }
+  return (
+    <div className="container">
+      <div className="row">
+      </div>
+      <div className="col s1 infoGone"></div>
+      <div className="row create-group-card ">
+        <div className="col-12">
+          <Card
+            style={{ width: "25rem" }}
+            className="container-fluid group-card"
+            id="group-card"
+          >
+            <Card.Body>
+              <Card.Title>Join Existing Group</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                Enter Details here
+                </Card.Subtitle>
+                
+              <form>
+                {/* Group Name  */}
 
+                <h5 className="find-title-name">Group Name:</h5>
+                <input
+                  type="text"
+                  ref={groupRef}
+                  name="join-group"
+                  placeholder="Group name"
+                />
 
-    // Visual Rendering //
+                {/* Group Password  */}
 
-    return (
-        <div className="container">
-            <div className="row find-group-modal">
-                <div className="col-12">
-                    <h4 className="find-title-main">Join Existing Group:</h4>
+                <h5 className="find-title-password">Password:</h5>
+                <input
+                  type="text"
+                  ref={passwordRef}
+                  name="join-password"
+                  placeholder="Holly Jolly Christmas"
+                />
 
-                    <form>
+                <br></br>
 
-                        {/* Group Name  */}
-
-                        <h4 className="find-title-name">Group Name:</h4>
-                        <input type="text" ref={groupRef} name="join-group" placeholder="Group name" />
-                        <h4 className="find-title-password">Password:</h4>
-                        <input type="text" ref={passwordRef} name="join-password" placeholder="Holly Jolly Christmas" />
-
-                        <button className="find-group-button" onClick={findGroup}>Submit</button>
-                    </form>
-                </div>
-            </div>
+                <button
+                  className="find-group-button btn btn-primary"
+                  onClick={findGroup}
+                >
+                  Submit
+                </button>
+              </form>
+            </Card.Body>
+          </Card>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

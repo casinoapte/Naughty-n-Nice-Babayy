@@ -9,7 +9,6 @@ GROUP DATABASE INFO
 "password" : "123",
 "membersNum" : 12,
 "memberNames:" ["Casino Apte", "Ryan Witherspoon", "Colby Trahan", Joshua, Charlie]
-
 }
 
 
