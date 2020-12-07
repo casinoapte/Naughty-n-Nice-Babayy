@@ -1,8 +1,8 @@
 import { useState } from "react";
-import API from "../../utils/API";
+import API from "../../../utils/API";
 import { useHistory } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import "./style.css";
+import "../style.css"
 
 function CreateGroup() {
   // Use State and Hooks Setting //
@@ -46,11 +46,8 @@ function CreateGroup() {
   // Visual Rendering //
 
   return (
-    <div className="container">
-      <div className="row"></div>
-      <div className="col s1 infoGone"></div>
-      <div className="row create-group-card ">
-        <div className="col-12">
+    
+        <div className="col-6">
           <Card
             style={{ width: "25rem" }}
             className="container-fluid group-card"
@@ -97,8 +94,7 @@ function CreateGroup() {
             </Card.Body>
           </Card>
         </div>
-      </div>
-    </div>
+    
   );
 }
 
