@@ -1,9 +1,8 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
-import AddMembers from "../../components/add-displayMembers/AddMembers"
-import DisplayMembers from '../../components/add-displayMembers/DisplayMembers';
-import DisplayDescription from '../../components/GroupDescription/DisplayDescription';
-import DisplayWishList from '../../components/Yourwishlist/DisplayWishList';
+import MembersComponent from "../../components/add-displayMembers/MembersComponent"
+import DescriptionComponent from '../../components/GroupDescription/DisplayDescription';
+import WishListComponent from '../../components/Yourwishlist/DisplayWishList';
 
 
 const MainGroupPage = (props) => {
@@ -15,8 +14,6 @@ const MainGroupPage = (props) => {
     // Dynamically Displaying Group Name For Title //
 
     const params = useParams();
-
-    // Pushing Members to the Groups MemberNames Array //
 
     // Visual Rendering //
 
@@ -38,19 +35,19 @@ const MainGroupPage = (props) => {
                 {/* Add and Display Members Component */}
 
                 <div className="col-3 members-component">
-                    <AddMembers/>
+                    <MembersComponent />
                 </div>
 
                 {/* YOUR wishlist Component */}
 
                 <div className="col-3 your-wishlist-component">
-                    <DisplayWishList />
+                    <WishListComponent />
                 </div>
 
                 {/* Description Component */}
 
                 <div className="col-3 description-component">
-                    <DisplayDescription/>
+                    <DescriptionComponent/>
                 </div>
             </div>
         </div>

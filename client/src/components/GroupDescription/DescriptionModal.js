@@ -1,12 +1,7 @@
-import React, { useState, useEffect } from "react";
-import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import React from "react";
 
-export default function GroupDescription() {
-  const params = useParams();
-  console.log(params);
 
+export default function DescriptionModal() {
   return (
     <>
       <button
@@ -41,8 +36,8 @@ export default function GroupDescription() {
               </button>
             </div>
             <div className="modal-body">
-              <h6>Description:</h6>
-              <textarea placeholder="Spending limit/ gift exchange theme"></textarea>
+              <h6 className="description-modal-title">Description:</h6>
+              <textarea className="description-modal-textarea" id="description" name="description"></textarea>
             </div>
             <div className="modal-footer">
               <button
@@ -52,10 +47,7 @@ export default function GroupDescription() {
               >
                 Close
               </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-              >
+              <button type="button" className="btn btn-primary">
                 Save
               </button>
             </div>
@@ -65,4 +57,3 @@ export default function GroupDescription() {
     </>
   );
 }
-

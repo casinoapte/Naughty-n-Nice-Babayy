@@ -1,46 +1,35 @@
 import React, { Component } from 'react'
-import GroupDescription from './GroupDescription';
+import DescriptionModal from './DescriptionModal';
 
 
-class DisplayGroupDescription extends React.Component {
+export default function DescriptionComponent() {
 
     // Use State and Hooks Setting //
-
-    state = {
-        // members: 
-    }
-
 
 
     // External JS functions //
 
-    displayMembers = (id) => {
-        console.log(this.state.members);
-    }
 
     // Visual Rendering //
 
-    render() {
+    return (
+        <div className="container">
 
-        return (
-            <div className="container">
+            <div className="row members-display-modal">
+                <div className="col-12">
 
-                <div className="row members-display-modal">
-                    <div className="col-12">
+                    <h2>Description:</h2>
 
-                        <h2>Description:</h2>
-
-                        <ol>
-                            <li className="name-display">
-                                {/* {this.state} */}
-                            </li>
-                        </ol>
-                        <GroupDescription/>
-                    </div>
+                    <ol>
+                        <li className="name-display">
+                            {/* {this.state} */}
+                        </li>
+                    </ol>
+                    <DescriptionModal />
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+
 }
 
-export default DisplayGroupDescription;

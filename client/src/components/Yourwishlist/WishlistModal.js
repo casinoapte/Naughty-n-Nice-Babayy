@@ -3,7 +3,6 @@ import React from "react";
 
 
 function wishListSaveBtn(){
-  
   console.log("Save");
 }
 
