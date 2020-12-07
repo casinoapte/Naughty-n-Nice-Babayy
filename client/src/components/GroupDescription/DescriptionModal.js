@@ -1,27 +1,21 @@
 import React from "react";
 
 
-
-function wishListSaveBtn(){
-  
-  console.log("Save");
-}
-
-export default function Yourwishlist() {
+export default function DescriptionModal() {
   return (
     <>
       <button
         type="button"
         className="btn btn-primary"
         data-toggle="modal"
-        data-target="#exampleModal"
+        data-target="#exampleModal2"
       >
-        Add to wishlist
+        Add Description
       </button>
 
       <div
         className="modal fade"
-        id="exampleModal"
+        id="exampleModal2"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -29,8 +23,8 @@ export default function Yourwishlist() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-wishlist" id="exampleModalLabel">
-                Wishlist:
+              <h5 className="modal-description" id="exampleModalLabel">
+                Description:
               </h5>
               <button
                 type="button"
@@ -42,12 +36,8 @@ export default function Yourwishlist() {
               </button>
             </div>
             <div className="modal-body">
-              <h6>Item:</h6>
-              <input placeholder="Socks" id="wishlist" name="wishlist"></input>
               <h6>Description:</h6>
-              <input placeholder="Size, color, etc"></input>
-              <h6>URL:</h6>
-              <input placeholder="socks.com"></input>
+              <textarea id="description" name="description"></textarea>
             </div>
             <div className="modal-footer">
               <button
@@ -57,7 +47,7 @@ export default function Yourwishlist() {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary" onClick={wishListSaveBtn}>
+              <button type="button" className="btn btn-primary">
                 Save
               </button>
             </div>

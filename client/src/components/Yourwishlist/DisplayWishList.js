@@ -1,46 +1,34 @@
 import React, { Component } from 'react'
-import Yourwishlist from './Yourwishlist';
+import WishlistModal from './WishlistModal';
 
 
-class DisplayWishList extends React.Component {
+export default function DisplayWishList() {
 
     // Use State and Hooks Setting //
 
-    state = {
-        // members: 
-    }
-
-
-
     // External JS functions //
 
-    displayMembers = (id) => {
-        console.log(this.state.members);
-    }
-
+    
     // Visual Rendering //
 
-    render() {
+    return (
+        <div className="container">
 
-        return (
-            <div className="container">
+            <div className="row members-display-modal">
+                <div className="col-12">
 
-                <div className="row members-display-modal">
-                    <div className="col-12">
+                    <h2>Wishlist:</h2>
 
-                        <h2>Wishlist:</h2>
-
-                        <ol>
-                            <li className="name-display">
-                                {/* {this.state} */}
-                            </li>
-                        </ol>
-                        <Yourwishlist/>
-                    </div>
+                    <ol>
+                        <li className="name-display">
+                            {/* {this.state} */}
+                        </li>
+                    </ol>
+                    <WishlistModal />
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+
 }
 
-export default DisplayWishList;

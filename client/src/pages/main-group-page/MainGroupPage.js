@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import AddMembers from "../../components/add-displayMembers/AddMembers"
-import DisplayMembers from '../../components/add-displayMembers/DisplayMembers';
 import GroupDescription from '../../components/GroupDescription/GroupDescription';
 import DisplayWishList from '../../components/Yourwishlist/DisplayWishList';
 
@@ -15,8 +14,6 @@ const MainGroupPage = (props) => {
     // Dynamically Displaying Group Name For Title //
 
     const params = useParams();
-
-    // Pushing Members to the Groups MemberNames Array //
 
     // Visual Rendering //
 
@@ -38,7 +35,7 @@ const MainGroupPage = (props) => {
                 {/* Add and Display Members Component */}
 
                 <div className="col-3 members-component">
-                    <AddMembers/>
+                    <AddMembers />
                 </div>
 
                 {/* YOUR wishlist Component */}
@@ -50,7 +47,7 @@ const MainGroupPage = (props) => {
                 {/* Description Component */}
 
                 <div className="col-3 description-component">
-                    <GroupDescription/>
+                    <GroupDescription />
                 </div>
             </div>
         </div>
