@@ -5,7 +5,7 @@ const groupSchema = new Schema({
   name: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   membersNum: { type: Number, required: true },
-  user: { type: Array, required: false },
+  user: { type: Array, required: false, unique: true },
   draw: { type: Boolean, default: false },
   description: { type: Array, required: false },
   wishlist: { type: Array, required: false },

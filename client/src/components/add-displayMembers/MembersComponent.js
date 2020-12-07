@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
 
 
-const MembersComponent = () => {
+const MembersComponent = (props) => {
 
     // Use State and Hooks Setting //
 
@@ -36,8 +36,8 @@ const MembersComponent = () => {
         const groupId = pathname.split("/")[1];
         API.findGroup2(groupId)
             .then((res => {
-                console.log(res.data.user);
-                // listmember(res.data.user)
+                let nameList = (res.data.user)
+                console.log(nameList);
             }))
     }
 
@@ -57,7 +57,7 @@ const MembersComponent = () => {
 
                     <ul className="name-display">
                         <li>
-
+                        
                         </li>
                     </ul>
 
