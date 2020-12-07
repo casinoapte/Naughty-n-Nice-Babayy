@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import MembersComponent from "../../components/add-displayMembers/MembersComponent"
-import DescriptionComponent from '../../components/GroupDescription/DisplayDescription';
+import DescriptionComponent from '../../components/GroupDescription/DescriptionComponent';
 import WishListComponent from '../../components/Yourwishlist/DisplayWishList';
 
 

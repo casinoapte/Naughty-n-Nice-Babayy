@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
-import DisplayMembers from './DisplayMembers';
 
 
-
-const MembersComponent = () => {
+const MembersComponent = (props) => {
 
     // Use State and Hooks Setting //
 
     const { pathname } = useLocation();
 
-    const [MemberString, setMember] = useState({ name: "" })
+    const [MemberString, setMember] = useState()
 
     const [MemberList, listmember] = useState()
 
@@ -38,8 +36,8 @@ const MembersComponent = () => {
         const groupId = pathname.split("/")[1];
         API.findGroup2(groupId)
             .then((res => {
-                console.log(res.data.user);
-                // listmember(res.data.user)
+                let nameList = (res.data.user)
+                console.log(nameList);
             }))
     }
 
@@ -58,8 +56,9 @@ const MembersComponent = () => {
                     <h3 className="add-title">Members:</h3>
 
                     <ul className="name-display">
-                        <li></li>
-
+                        <li>
+                        
+                        </li>
                     </ul>
 
 
