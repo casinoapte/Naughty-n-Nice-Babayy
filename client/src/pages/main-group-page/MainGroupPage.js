@@ -1,11 +1,9 @@
 import React from 'react'
-import DisplayMembers from "../../components/add-displayMembers/DisplayMembers"
 import { useParams } from "react-router-dom";
-import API from "../../utils/API"
 import AddMembers from "../../components/add-displayMembers/AddMembers"
 import GroupDescription from '../../components/GroupDescription/GroupDescription';
 
-export default function MainGroupPage() {
+const MainGroupPage = (props) => {
 
     // Use State and Hooks Setting //
 
@@ -37,7 +35,7 @@ export default function MainGroupPage() {
                 {/* Add and Display Members Component */}
 
                 <div className="col-3 members-component">
-                    <AddMembers />
+                    <AddMembers/>
                 </div>
 
                 {/* YOUR wishlist Component */}
@@ -55,3 +53,5 @@ export default function MainGroupPage() {
         </div>
     )
 }
+
+export default MainGroupPage;

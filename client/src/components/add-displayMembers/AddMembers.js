@@ -5,12 +5,15 @@ import DisplayMembers from './DisplayMembers';
 
 
 
-export default function AddMembers(groupName) {
-    const { pathname } = useLocation();
+const AddMembers = () => {
 
     // Use State and Hooks Setting //
 
+    const { pathname } = useLocation();
+
     const [MemberString, setMember] = useState({ name: "" })
+
+    const [MemberList, listmember] = useState()
 
     const handleInputChange = (e) => {
         e.preventDefault()
@@ -23,11 +26,27 @@ export default function AddMembers(groupName) {
 
     const addMember = (e) => {
         e.preventDefault();
-        console.log(MemberString)
         const groupId = pathname.split("/")[1];
         API.addMembers(MemberString, groupId)
             .catch(err => console.log(err));
+        retrieveMembers()
     }
+
+    // Retrieving Members Data back from DB to display //
+
+    const retrieveMembers = () => {
+        const groupId = pathname.split("/")[1];
+        API.findGroup2(groupId)
+            .then((res => {
+                console.log(res.data.user);
+                // listmember(res.data.user)
+            }))
+    }
+
+    retrieveMembers()
+
+    // console.log(listmember);
+
 
     // Visual Rendering //
 
@@ -36,8 +55,13 @@ export default function AddMembers(groupName) {
 
             <div className="row add-members-modal">
                 <div className="col-12">
+                    <h3 className="add-title">Members:</h3>
 
-                    <DisplayMembers />
+                    <ul className="name-display">
+                        <li></li>
+
+                    </ul>
+
 
                     <h4 className="add-title-main">Add members:</h4>
 
@@ -49,7 +73,7 @@ export default function AddMembers(groupName) {
                         <input type="text" name="name" onChange={handleInputChange}></input>
 
                         <button className="add-member-button" onClick={addMember}>Add</button>
-            
+
                     </form>
 
                 </div>
@@ -58,3 +82,5 @@ export default function AddMembers(groupName) {
         </div>
     )
 }
+
+export default AddMembers;
