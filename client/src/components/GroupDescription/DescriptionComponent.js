@@ -1,9 +1,10 @@
+// import DescriptionModal from './DescriptionModal';
 import React, { useState } from 'react';
 import { useLocation } from "react-router-dom";
-import DescriptionModal from './DescriptionModal';
 import API from "../../utils/API"
+import { Card } from "react-bootstrap";
+import "./style.css"
 export function descriptionAdd() { }
-
 
 export default function DescriptionComponent() {
 
@@ -37,26 +38,39 @@ export default function DescriptionComponent() {
     // Visual Rendering //
 
     return (
-        <div className="container">
+        <div className="col-4">
+          <Card
+            style={{ width: "20rem" }}
+            className="container-fluid group-card"
+            id="group-card"
+          >
+            <Card.Body>
+              <Card.Title>Description</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+                ***
+              </Card.Subtitle>
+              <br></br>
+              <form>
+                {/* Description  */}
 
-            <div className="row members-display-modal">
-                <div className="col-12">
+                <h5>Description</h5>
+                <textarea type="text" name="description" onChange={handleInputChange}></textarea>
+                <ul>
+                    <li className="name-display">
+                        {/* {this.state} */}
+                    </li>
+                </ul>
 
-                    <h2>Description:</h2>
+                <br></br>
 
-                    <ul>
-                        <li className="name-display">
-                            {/* {this.state} */}
-                        </li>
-                    </ul>
-
-                    <h5 className="members-add-title">Description:</h5>
-                        <textarea type="text" name="description" onChange={handleInputChange}></textarea>
-
-                        <button className="add-member-button" onClick={descriptionAdd}>Add</button>
-
-                </div>
-            </div>
+                <button
+                  className="add-member-button btn btn-primary"
+                  onClick={descriptionAdd}>
+                  Add
+                </button>
+              </form>
+            </Card.Body>
+          </Card>
         </div>
     )
 
