@@ -13,7 +13,7 @@ const MembersComponent = (props) => {
 
     const [MemberString, setMember] = useState()
 
-    const [MemberList, listmember] = useState()
+    const [memberList, setMemberList] = useState([])
 
     const handleInputChange = (e) => {
         e.preventDefault()
@@ -40,6 +40,7 @@ const MembersComponent = (props) => {
             .then((res => {
                 let nameList = (res.data.user)
                 console.log(nameList);
+                setMemberList(nameList)
             }))
     }
 
@@ -65,6 +66,9 @@ const MembersComponent = (props) => {
               <br></br>
               <form>
                 {/* Name of Member  */}
+                {memberList && memberList.map(member => (
+                  <h3>{member.name}</h3>
+                ))}
 
                 <h5>Name:</h5>
                 <input className="members-add-title" type="text" name="name" onChange={handleInputChange} />
