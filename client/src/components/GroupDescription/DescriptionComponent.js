@@ -11,12 +11,12 @@ export default function DescriptionComponent() {
     // Use State and Hooks Setting //
     const { pathname } = useLocation();
 
-    const [DescriptionString, setDescription] = useState()
+    const [DescriptionString, setDescriptionString] = useState()
 
 
     const handleInputChange = (e) => {
         e.preventDefault()
-        setDescription({ ...DescriptionString, [e.target.name]: e.target.value })
+        setDescriptionString( e.target.value )
     }
 
     // External JS functions //
@@ -28,6 +28,7 @@ export default function DescriptionComponent() {
         e.preventDefault();
         const groupId = pathname.split("/")[1];
         API.addDescription(DescriptionString, groupId)
+            .then(res => console.log(res))
             .catch(err => console.log(err));
     }
 
