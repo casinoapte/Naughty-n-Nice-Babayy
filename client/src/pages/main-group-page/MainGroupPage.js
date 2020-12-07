@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import MembersComponent from "../../components/add-displayMembers/MembersComponent"
 import DescriptionComponent from '../../components/GroupDescription/DescriptionComponent';
 import WishListComponent from '../../components/Yourwishlist/DisplayWishList';
+import "./styles.css"
 
 
 const MainGroupPage = (props) => {
@@ -23,8 +24,8 @@ const MainGroupPage = (props) => {
             {/* Main Title Displaying Group Name And Password  */}
 
             <div className="row group-main-title">
-                <div className="col-6 offset-4 group-title">
-                    <h1>Name: {params.name}</h1>
+                <div className="col-6 offset-3 group-title">
+                    <h1 className="group-header">{params.name}</h1>
                 </div>
             </div>
 
@@ -34,21 +35,21 @@ const MainGroupPage = (props) => {
 
                 {/* Add and Display Members Component */}
 
-                <div className="col-3 members-component">
+                {/* <div className="col-3 members-component"> */}
                     <MembersComponent />
-                </div>
+                
 
                 {/* YOUR wishlist Component */}
 
-                <div className="col-3 your-wishlist-component">
+                {/* <div className="col-3 your-wishlist-component"> */}
                     <WishListComponent />
-                </div>
+                
 
                 {/* Description Component */}
 
-                <div className="col-3 description-component">
+                {/* <div className="col-3 description-component"> */}
                     <DescriptionComponent/>
-                </div>
+                
             </div>
         </div>
     )

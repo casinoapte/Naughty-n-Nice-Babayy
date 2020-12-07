@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
+import { Card } from "react-bootstrap";
+import "./style.css"
 
 
 const MembersComponent = (props) => {
@@ -49,36 +51,36 @@ const MembersComponent = (props) => {
     // Visual Rendering //
 
     return (
-        <div className="container">
+        <div className="col-4">
+          <Card
+            style={{ width: "20rem" }}
+            className="container-fluid group-card"
+            id="group-card"
+          >
+            <Card.Body>
+              <Card.Title>Members</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+                Add members:
+              </Card.Subtitle>
+              <br></br>
+              <form>
+                {/* Name of Member  */}
 
-            <div className="row add-members-modal">
-                <div className="col-12">
-                    <h3 className="add-title">Members:</h3>
+                <h5>Name:</h5>
+                <input className="members-add-title" type="text" name="name" onChange={handleInputChange} />
 
-                    <ul className="name-display">
-                        <li>
-                        
-                        </li>
-                    </ul>
+                <br></br>
 
-
-                    <h4 className="add-title-main">Add members:</h4>
-
-                    <form>
-
-                        {/* Name  */}
-
-                        <h5 className="members-add-title">Name:</h5>
-                        <input type="text" name="name" onChange={handleInputChange}></input>
-
-                        <button className="add-member-button" onClick={addMember}>Add</button>
-
-                    </form>
-
-                </div>
-            </div>
-
+                <button
+                  className="add-member-button btn btn-primary"
+                  onClick={addMember}>
+                  Submit
+                </button>
+              </form>
+            </Card.Body>
+          </Card>
         </div>
+        
     )
 }
 

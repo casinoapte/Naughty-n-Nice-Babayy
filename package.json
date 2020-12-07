@@ -15,25 +15,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "concurrently": "^4.1.0",
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16",
-    "react-modal": "^3.12.1",
-    "react-particles-js": "^3.4.1",
-    "styled-components": "^5.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/casinoapte/Naughty-n-Nice-Babayy.git"
-  },
-  "bugs": {
-    "url": "https://github.com/casinoapte/Naughty-n-Nice-Babayy/issues"
-  },
-  "homepage": "https://github.com/casinoapte/Naughty-n-Nice-Babayy#readme",
-  "description": ""
+    "mongoose": "^5.3.16"
+  }
 }

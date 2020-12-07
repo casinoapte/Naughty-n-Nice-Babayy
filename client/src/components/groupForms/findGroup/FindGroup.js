@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import API from "../../utils/API";
+import API from "../../../utils/API";
 import { useHistory } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import "./style.css";
+import "../style.css";
 
 export default function FindGroup() {
   // Use State and Hooks Setting //
@@ -32,12 +32,7 @@ export default function FindGroup() {
   // Visual Rendering //
 
   return (
-    <div className="container">
-      <div className="row">
-      </div>
-      <div className="col s1 infoGone"></div>
-      <div className="row create-group-card ">
-        <div className="col-12">
+        <div className="col-6">
           <Card
             style={{ width: "25rem" }}
             className="container-fluid group-card"
@@ -48,7 +43,7 @@ export default function FindGroup() {
                 <Card.Subtitle className="mb-2 text-muted">
                 Enter Details here
                 </Card.Subtitle>
-                
+                <br></br>
               <form>
                 {/* Group Name  */}
 
@@ -82,7 +77,6 @@ export default function FindGroup() {
             </Card.Body>
           </Card>
         </div>
-      </div>
-    </div>
+     
   );
 }

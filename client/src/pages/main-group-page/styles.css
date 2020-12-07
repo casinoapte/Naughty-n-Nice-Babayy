@@ -1,12 +1,18 @@
-/* //////////////////////////////
-        /* Pages CSS */
-/* ////////////////////////////// */ */
+
 
 /* Main Group Page CSS  */
 
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 
 .group-main-title {
     text-align: center;
+}
+
+.group-header {
+    color: whitesmoke;
+    font-family: 'Aldrich', sans-serif;
+    padding-top: 50px;
+
 }
 
 
@@ -35,9 +41,10 @@
     margin-bottom: 5px;
     border-radius: 25px;
     background-color: white;
-    color: #4C5051;
+    color: white;
     border: none;
     width: 100px;
+
 }
 
 /* Find Group Component  */
@@ -71,7 +78,7 @@
     margin-left: 20px;
     border-radius: 25px;
     background-color: white;
-    color: #4C5051;
+    color: white;
     border: none;
     width: 100px;
 }
@@ -102,7 +109,7 @@
     margin-top: 20px;
     border-radius: 25px;
     background-color: white;
-    color: #4C5051;
+    color: white;
     border: none;
     width: 70px;
 }
