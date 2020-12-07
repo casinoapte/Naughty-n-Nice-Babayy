@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import AddMembers from "../../components/add-displayMembers/AddMembers"
+import GroupDescription from '../../components/GroupDescription/GroupDescription';
 
 const MainGroupPage = (props) => {
 
@@ -46,7 +47,7 @@ const MainGroupPage = (props) => {
                 {/* Description Component */}
 
                 <div className="col-3 description-component">
-
+                    <GroupDescription/>
                 </div>
             </div>
         </div>

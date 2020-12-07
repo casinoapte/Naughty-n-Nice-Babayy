@@ -77,6 +77,17 @@ function CreateGroup() {
                   onChange={handleInputChange}
                 />
 
+                {/* Group Description */}
+
+                <h5>Group Description:</h5>
+                <input
+                  type="description"
+                  name="description"
+                  onChange={handleInputChange}
+                />
+
+
+
                 {/* Group Members  */}
 
                 <h5>Group Members:</h5>
