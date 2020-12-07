@@ -6,6 +6,7 @@ function wishListSaveBtn(){
   
   console.log("Save");
 }
+
 export default function Yourwishlist() {
   return (
     <>

@@ -8,7 +8,8 @@ const groupSchema = new Schema({
   user: {type: Array, required: false},
   draw: {type: Boolean, default: false},
   date: { type: Date, default: Date.now },
-  description: { type: String, required: false}
+  description: { type: String, required: false},
+  wishlist: { type: Array, required: false}
 });
 
 const Group = mongoose.model("Group", groupSchema);
