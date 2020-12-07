@@ -56,13 +56,13 @@ function CreateGroup() {
             className="container-fluid group-card"
             id="group-card"
           >
-             <Card.Body>
+            <Card.Body>
               <Card.Title>Create a Secret Santa Group</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
                 Enter Details here
               </Card.Subtitle>
               <br></br>
-              <form> 
+              <form>
                 {/* Group Name  */}
 
                 <h5>Group Name:</h5>
@@ -76,17 +76,6 @@ function CreateGroup() {
                   name="password"
                   onChange={handleInputChange}
                 />
-
-                {/* Group Description */}
-
-                <h5>Group Description:</h5>
-                <input
-                  type="description"
-                  name="description"
-                  onChange={handleInputChange}
-                />
-
-
 
                 {/* Group Members  */}
 

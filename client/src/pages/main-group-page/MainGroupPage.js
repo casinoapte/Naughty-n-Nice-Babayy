@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from "react-router-dom";
 import AddMembers from "../../components/add-displayMembers/AddMembers"
 import DisplayMembers from '../../components/add-displayMembers/DisplayMembers';
-import GroupDescription from '../../components/GroupDescription/GroupDescription';
+import DisplayDescription from '../../components/GroupDescription/DisplayDescription';
 import DisplayWishList from '../../components/Yourwishlist/DisplayWishList';
 
 
@@ -50,7 +50,7 @@ const MainGroupPage = (props) => {
                 {/* Description Component */}
 
                 <div className="col-3 description-component">
-                    <GroupDescription/>
+                    <DisplayDescription/>
                 </div>
             </div>
         </div>
