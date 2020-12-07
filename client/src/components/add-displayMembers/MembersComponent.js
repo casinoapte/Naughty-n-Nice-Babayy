@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
-import DisplayMembers from './DisplayMembers';
-
 
 
 const MembersComponent = () => {
@@ -11,7 +9,7 @@ const MembersComponent = () => {
 
     const { pathname } = useLocation();
 
-    const [MemberString, setMember] = useState({ name: "" })
+    const [MemberString, setMember] = useState()
 
     const [MemberList, listmember] = useState()
 
@@ -58,8 +56,9 @@ const MembersComponent = () => {
                     <h3 className="add-title">Members:</h3>
 
                     <ul className="name-display">
-                        <li></li>
+                        <li>
 
+                        </li>
                     </ul>
 
 

@@ -15,6 +15,8 @@ router.get("/:name/:pw", (req, res) => {
     });
 });
 
+// Find Group by ID //
+
 router.get("/:id", (req, res) => {
   db.Group.findOne({
     _id: req.params.id,
@@ -27,18 +29,12 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Find Group by ID //
 
-// router.get("/find/:id", (req, res) => {
-//   console.log("done");
-//   db.Group.findById(req.params.id)
-//     .then((data) => {
-//       res.json(data);
-//     })
-//     .catch((err) => {
-//       res.send(500).json(err);
-//     });
-// });
+router.put("/description/:id", (req, res) => {
+  db.Group.findByIdAndUpdate(req.params.id, { $push: { description: req.body } })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
 
 
 router.put("/:id", (req, res) => {
