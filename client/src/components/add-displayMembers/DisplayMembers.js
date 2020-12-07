@@ -47,7 +47,6 @@ export default function DisplayMembers(props) {
 
                     <ol>
                         <li className="name-display">
-
                         </li>
                     </ol>
                 </div>

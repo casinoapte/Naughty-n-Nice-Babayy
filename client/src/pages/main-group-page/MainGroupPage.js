@@ -1,7 +1,10 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import AddMembers from "../../components/add-displayMembers/AddMembers"
+import DisplayMembers from '../../components/add-displayMembers/DisplayMembers';
 import GroupDescription from '../../components/GroupDescription/GroupDescription';
+import DisplayWishList from '../../components/Yourwishlist/DisplayWishList';
+
 
 const MainGroupPage = (props) => {
 
@@ -41,7 +44,7 @@ const MainGroupPage = (props) => {
                 {/* YOUR wishlist Component */}
 
                 <div className="col-3 your-wishlist-component">
-
+                    <DisplayWishList />
                 </div>
 
                 {/* Description Component */}
