@@ -5,7 +5,7 @@ import DisplayMembers from './DisplayMembers';
 
 
 
-const AddMembers = () => {
+const MembersComponent = () => {
 
     // Use State and Hooks Setting //
 
@@ -83,4 +83,4 @@ const AddMembers = () => {
     )
 }
 
-export default AddMembers;
+export default MembersComponent;

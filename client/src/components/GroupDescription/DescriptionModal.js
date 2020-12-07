@@ -36,8 +36,8 @@ export default function DescriptionModal() {
               </button>
             </div>
             <div className="modal-body">
-              <h6>Description:</h6>
-              <textarea id="description" name="description"></textarea>
+              <h6 className="description-modal-title">Description:</h6>
+              <textarea className="description-modal-textarea" id="description" name="description"></textarea>
             </div>
             <div className="modal-footer">
               <button
