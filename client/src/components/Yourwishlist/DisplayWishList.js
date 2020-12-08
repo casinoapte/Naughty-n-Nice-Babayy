@@ -12,15 +12,13 @@ export default function DisplayWishList() {
   
   const { pathname } = useLocation();
   
-  const namesArray = ['Ryan', 'Colby', 'Joshua']
+  let namesArray = []
   
   const namesTable = secretSanta.buildSecretSantaTable(namesArray)
   const result = Object.values(namesTable);
   console.log(result);
   
-  useEffect(() => {
-    getMemberNames()
-  }, [])
+  
   
   
   // External JS functions //
@@ -37,7 +35,8 @@ export default function DisplayWishList() {
         return name['name']
       })
       
-      console.log(finalNames);
+      
+      namesArray.push(finalNames)
     }))
   }
 
@@ -48,7 +47,8 @@ export default function DisplayWishList() {
   
   const drawNames = (e) => {
     e.preventDefault()
-    console.log("hello");
+    getMemberNames();
+    console.log(namesArray);
   }
   
 
