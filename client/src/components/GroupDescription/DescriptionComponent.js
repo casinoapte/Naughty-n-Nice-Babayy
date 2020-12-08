@@ -21,7 +21,7 @@ export default function DescriptionComponent() {
   }
 
   useEffect(() => {
-    // SetDetails()
+    getDescription()
   }, [])
 
 
@@ -34,7 +34,7 @@ export default function DescriptionComponent() {
     const groupId = pathname.split("/")[1];
     API.addDescription(DescriptionString, groupId)
       .catch(err => console.log(err));
-      getDescription()
+    getDescription()
   }
 
   const getDescription = (e) => {

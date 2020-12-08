@@ -63,11 +63,11 @@ const MembersComponent = (props) => {
               </Card.Subtitle>
           <br></br>
           <form>
-            
+
             {/* Name of Member  */}
 
             {memberList && memberList.map(member => (
-              <h3>{member.name}</h3>
+              <p>{member.name}</p>
             ))}
 
             <h5>Add Person:</h5>
