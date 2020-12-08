@@ -82,8 +82,8 @@ const MembersComponent = (props) => {
 
             {memberList.map(member => (
               <>
-                <p>{member.name}</p>
-                <DeleteButton name={member.name} onClick={deleteMember} />
+                <h5>{member.name}<DeleteButton name={member.name} onClick={deleteMember} /></h5>
+                
               </>
             ))}
 

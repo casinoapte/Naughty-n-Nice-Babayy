@@ -63,15 +63,15 @@ export default function DescriptionComponent() {
               </Card.Subtitle>
           <br></br>
 
-          <p className="details-titles">Location: {ShowDetails.location}</p>
-          <p className="details-titles">Party Time: {ShowDetails.time}</p>
-          <p className="details-titles">Max Price: ${ShowDetails.price}</p>
+          <h6 className="details-titles">Location: {ShowDetails.location}</h6>
+          <h6 className="details-titles">Party Time: {ShowDetails.time}</h6>
+          <h6 className="details-titles">Max Price: ${ShowDetails.price}</h6>
 
           <form>
 
             {/* Location  */}
 
-            <h5>Location:</h5>
+            <h5 className="location-title">Location:</h5>
             <input type="text" name="location" onChange={handleInputChange}></input>
 
             {/* Time  */}
