@@ -31,7 +31,7 @@ const MembersComponent = (props) => {
 
   const addMember = (e) => {
     e.preventDefault();
-    setMember({ ...MemberString, [e.target.name]: null })
+    // setMember({ ...MemberString, [e.target.name]: null })
     const groupId = pathname.split("/")[1];
     API.addMembers(MemberString, groupId)
         .catch(err => console.log(err));
