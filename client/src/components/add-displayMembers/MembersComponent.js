@@ -34,7 +34,7 @@ const MembersComponent = (props) => {
     setMember({ ...MemberString, [e.target.name]: null })
     const groupId = pathname.split("/")[1];
     API.addMembers(MemberString, groupId)
-      .catch(err => console.log(err));
+        .catch(err => console.log(err));
     retrieveMembers()
   }
 
@@ -48,18 +48,6 @@ const MembersComponent = (props) => {
         setMemberList(nameList)
       }))
   }
-
-  const deleteMember = (e) => {
-    e.preventDefault()
-   const userName = e.target.getAttribute("dataname");
-    console.log(userName)
-
-
-
-  }
-
-
-
 
 
   // Visual Rendering //
@@ -82,8 +70,9 @@ const MembersComponent = (props) => {
 
             {memberList.map(member => (
               <>
-                <h5>{member.name}<DeleteButton name={member.name} onClick={deleteMember} /></h5>
-                
+                <h5>{member.name}
+                  <DeleteButton name={member.name} /></h5>
+
               </>
             ))}
 
