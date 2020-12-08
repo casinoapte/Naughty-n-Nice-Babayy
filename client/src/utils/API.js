@@ -44,11 +44,9 @@ export default {
 
   // Deleting Members from DB Using Button //
 
-
-
-
-
-
+  deleteMember: function (name) {
+    return axios.delete("/api/groups/name/" + name)
+  },
 
 
   // Finding members to use as props for display component - ??? //

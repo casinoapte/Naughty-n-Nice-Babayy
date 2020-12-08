@@ -29,19 +29,29 @@ router.get("/:id", (req, res) => {
     });
 });
 
-
 router.put("/description/:id", (req, res) => {
   db.Group.findByIdAndUpdate(req.params.id, { $set: req.body }, { returnOriginal: false })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 });
 
-
 router.put("/:id", (req, res) => {
   db.Group.findByIdAndUpdate(req.params.id, { $push: { user: req.body } })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 });
+
+router.delete("/name/:name", (req, res) => {
+  console.log(req.query.name)
+  db.Group.deleteOne({
+    user: req.params.name
+  })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+})
+
+
+
 
 // Matches with "/api/group"
 router.route("/").post(groupsController.create);
