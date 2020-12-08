@@ -4,9 +4,21 @@ import { Card } from "react-bootstrap";
 import "./style.css";
 
 export default function DisplayWishList() {
+
   // Use State and Hooks Setting //
 
+
+
+
+
   // External JS functions //
+
+
+
+
+
+
+
 
   // Visual Rendering //
 
@@ -18,18 +30,17 @@ export default function DisplayWishList() {
         id="group-card"
       >
         <Card.Body>
-          <Card.Title>Wish List</Card.Title>
+          <Card.Title>Member Draw:</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">***</Card.Subtitle>
-          <br></br>
-          <form>
-            {/* Wish List Item  */}
-            <ol>
-              <li className="name-display">{/* {this.state} */}</li>
-            </ol>
-            {/* <WishlistModal /> */}
-            <br></br>
 
-          </form>
+          <button
+                  className="create-group-button btn btn-primary"
+                  
+                >
+                  Draw!
+                </button>
+
+
         </Card.Body>
       </Card>
     </div>
