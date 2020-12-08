@@ -58,18 +58,19 @@ const MembersComponent = (props) => {
         id="group-card"
       >
         <Card.Body>
-          <Card.Title>Members</Card.Title>
+          <Card.Title>Members:</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Add members:
               </Card.Subtitle>
           <br></br>
           <form>
+            
             {/* Name of Member  */}
+
             {memberList && memberList.map(member => (
               <h3>{member.name}</h3>
             ))}
 
-            <h5>Name:</h5>
+            <h5>Add Person:</h5>
             <input className="members-add-title" type="text" name="name" onChange={handleInputChange} />
 
             <br></br>

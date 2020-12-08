@@ -7,7 +7,9 @@ const groupSchema = new Schema({
   membersNum: { type: Number, required: true },
   user: { type: Array, required: false, unique: true },
   draw: { type: Boolean, default: false },
-  description: { type: Array, required: false },
+  location: { type: Array, required: false },
+  time: { type: Array, required: false },
+  price: { type: Array, required: false },
   wishlist: { type: Array, required: false },
   date: { type: Date, default: Date.now }
 });

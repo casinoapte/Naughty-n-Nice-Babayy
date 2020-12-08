@@ -1,5 +1,5 @@
 // import DescriptionModal from './DescriptionModal';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
 import { Card } from "react-bootstrap";
@@ -13,12 +13,16 @@ export default function DescriptionComponent() {
 
   const [DescriptionString, setDescriptionString] = useState()
 
-  const [ShowDescription, SetDescription] = useState([])
+  const [ShowDetails, SetDetails] = useState([])
 
   const handleInputChange = (e) => {
     e.preventDefault()
     setDescriptionString({ ...DescriptionString, [e.target.name]: e.target.value })
   }
+
+  useEffect(() => {
+    // SetDetails()
+  }, [])
 
 
   // External JS functions //
@@ -27,15 +31,20 @@ export default function DescriptionComponent() {
 
   const descriptionAdd = (e) => {
     e.preventDefault();
-    SetDescription(DescriptionString);
     const groupId = pathname.split("/")[1];
     API.addDescription(DescriptionString, groupId)
-      .then(res => console.log(res))
       .catch(err => console.log(err));
+      getDescription()
   }
 
-
-  // External JS functions //
+  const getDescription = (e) => {
+    const groupId = pathname.split("/")[1];
+    API.findGroup2(groupId)
+      .then((res => {
+        let details = (res.data)
+        SetDetails(details)
+      }))
+  }
 
 
   // Visual Rendering //
@@ -48,23 +57,32 @@ export default function DescriptionComponent() {
         id="group-card"
       >
         <Card.Body>
-          <Card.Title>Description</Card.Title>
+          <Card.Title>Details:</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
             ***
               </Card.Subtitle>
           <br></br>
-          <ul>
-            <li className="name-display">
 
-              <p>{ShowDescription}</p>
+          <p className="details-titles">Location: {ShowDetails.location}</p>
+          <p className="details-titles">Party Time: {ShowDetails.time}</p>
+          <p className="details-titles">Max Price: ${ShowDetails.price}</p>
 
-            </li>
-          </ul>
           <form>
-            {/* Description  */}
 
-            <h5>Input:</h5>
-            <textarea type="text" name="description" onChange={handleInputChange}></textarea>
+            {/* Location  */}
+
+            <h5>Location:</h5>
+            <input type="text" name="location" onChange={handleInputChange}></input>
+
+            {/* Time  */}
+
+            <h5>Time:</h5>
+            <input type="text" name="time" onChange={handleInputChange}></input>
+
+            {/* Max Gift Price  */}
+
+            <h5>Max Price ($):</h5>
+            <input type="number" name="price" onChange={handleInputChange}></input>
 
             <br></br>
 
