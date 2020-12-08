@@ -5,23 +5,25 @@ import "./style.css";
 const secretSanta = require('secret-santa-generator');
 
 export default function DisplayWishList() {
-  
 
-  const namesArray = ['Ryan', 'Casino', 'Colby', 'Charlie', 'Joshua', 'Shav']
- 
-  const namesTable = secretSanta.buildSecretSantaTable(namesArray)
-
-  const result = Object.values(namesTable);
-  
   // Use State and Hooks Setting //
 
+  const namesArray = ['Ryan', 'Casino', 'Colby', 'Charlie', 'Joshua', 'Shav']
 
-
-
-
+  
+  const namesTable = secretSanta.buildSecretSantaTable(namesArray)
+  const result = Object.values(namesTable);
+  
+ 
+ 
+  
   // External JS functions //
-
-
+  
+  const drawNames = (e) => {
+    e.preventDefault()
+    console.log("hello");
+  }
+  
 
 
 
@@ -41,21 +43,17 @@ export default function DisplayWishList() {
           <Card.Title>Member Draw:</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">***</Card.Subtitle>
           {namesArray.map((names) =>
-        <li>{names}</li>
-        )};
+            <li className="draw-members-fixed">{names}</li>
+          )}
 
           {result.map((santas) =>
-        <li>{santas}</li>
-        )};
-          
-          
+            <li className="draw-members-generate">{santas}</li>
+          )}
 
-          <button
-                  className="create-group-button btn btn-primary"
-                  
-                >
-                  Draw!
-                </button>
+
+          <button className="create-group-button btn btn-primary" onClick={drawNames}>
+            Draw!
+          </button>
 
 
         </Card.Body>
