@@ -9,9 +9,9 @@ export default function DisplayWishList() {
 
   const namesArray = ['Ryan', 'Casino', 'Colby', 'Charlie', 'Joshua', 'Shav']
  
-  
+  const namesTable = secretSanta.buildSecretSantaTable(namesArray)
 
-  
+  const result = Object.values(namesTable);
   
   // Use State and Hooks Setting //
 
