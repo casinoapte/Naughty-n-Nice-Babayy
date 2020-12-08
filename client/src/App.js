@@ -1,21 +1,26 @@
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GroupForms from "./components/groupForms/GroupForms"
 import HomePage from "./pages/HomePage/HomePage";
 import MainGroupPage from "./pages/main-group-page/MainGroupPage";
 import Sidebar from './components/Sidebar/Sidebar';
+import NoMatch from "./pages/ErrorPage/NoMatch";
 
 
 function App() {
   return (
-  <Router>
-    <>
-    <HomePage/>
-    <Route exact path="/" component={GroupForms}></Route>
-    <Route exact path="/:_id/:name" component={MainGroupPage}></Route>
-    <Sidebar />
-    </>
-  </Router>
+    <Router>
+      <>
+        <HomePage />
+        <Switch>
+          <Route exact path="/" component={GroupForms}></Route>
+          <Route exact path="/:_id/:name" component={MainGroupPage}></Route>
+          <Route path="*" component={NoMatch}></Route>
+          {/* <Route><NoMatch/></Route> */}
+        </Switch>
+        <Sidebar />
+      </>
+    </Router>
   )
 }
 
