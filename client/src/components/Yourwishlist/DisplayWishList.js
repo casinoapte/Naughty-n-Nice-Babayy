@@ -1,4 +1,3 @@
-// import WishlistModal from './WishlistModal';
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
@@ -7,45 +6,41 @@ import "./style.css";
 const secretSanta = require('secret-santa-generator');
 
 export default function DisplayWishList() {
-
+  
   // Use State and Hooks Setting //
-
+  
   const { pathname } = useLocation();
-
+  
   let namesArray = []
-
+  
   const namesTable = secretSanta.buildSecretSantaTable(namesArray)
   const result = Object.values(namesTable);
   console.log(result);
-
+  
+  
   // External JS functions //
-
+  
   // Getting Member Names //
-
+  
   const getMemberNames = () => {
     const groupId = pathname.split("/")[1];
     API.findGroup2(groupId)
-      .then((res => {
-
-        let realNamesArray = res.data.user
-
-        finalNames.push(realNamesArray.map(function (name) {
-          return name['name']
-        }))
-
-        namesArray.push(finalNames)
-
-      }))
+    .then((res => {
+      let realNamesArray = res.data.user
+      
+      const finalNames = realNamesArray.map(function(name) {
+        return name['name']
+      })
+      namesArray.push(finalNames)
+    }))
   }
-
-  console.log(finalNames);
-
+  
   const drawNames = (e) => {
     e.preventDefault()
     getMemberNames();
     console.log(namesArray);
   }
-
+  
 
   // Visual Rendering //
 
