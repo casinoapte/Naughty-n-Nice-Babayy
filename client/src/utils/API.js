@@ -36,14 +36,22 @@ export default {
     return axios.put("/api/groups/" + id, memberName)
   },
 
-  // Adding Description to the Group Database //
+  // Adding Description to the Group Database - DONE //
 
   addDescription: function (description, id) {
     return axios.put("/api/groups/description/" + id, description)
   },
 
+  // Deleting Members from DB Using Button //
 
-  // Finding members to use as props for display component //
+
+
+
+
+
+
+
+  // Finding members to use as props for display component - ??? //
 
   findUser: function (name, id) {
     return axios.get("/api/groups/user/" + name + "/" + id)
@@ -51,6 +59,9 @@ export default {
         return dbGroup
       })
   }
+
+
+
 
 
 }
