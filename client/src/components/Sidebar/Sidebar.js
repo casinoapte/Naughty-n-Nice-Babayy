@@ -10,7 +10,8 @@ const StyledSideNav = styled.div`
     top: 0.0em;      /* Stay at the top */
     background-color: grey,; 
     overflow-x: hidden;     /* Disable horizontal scroll */
-    padding-top: 15px;
+    padding-top: 20px;
+    padding-left: 5px;
 `;
 
 class SideNav extends React.Component {
