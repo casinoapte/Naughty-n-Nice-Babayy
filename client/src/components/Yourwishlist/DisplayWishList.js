@@ -7,52 +7,45 @@ import "./style.css";
 const secretSanta = require('secret-santa-generator');
 
 export default function DisplayWishList() {
-  
+
   // Use State and Hooks Setting //
-  
+
   const { pathname } = useLocation();
-  
-  const namesArray = ['Ryan', 'Colby', 'Joshua']
-  
+
+  let namesArray = []
+
   const namesTable = secretSanta.buildSecretSantaTable(namesArray)
   const result = Object.values(namesTable);
   console.log(result);
-  
-  useEffect(() => {
-    getMemberNames()
-  }, [])
-  
-  
+
   // External JS functions //
-  
+
   // Getting Member Names //
 
-  const finalNames =[]
-  
   const getMemberNames = () => {
     const groupId = pathname.split("/")[1];
     API.findGroup2(groupId)
-    .then((res => {
-      let realNamesArray = res.data.user
-      
-      finalNames.push(realNamesArray.map(function(name) {
-        return name['name']
+      .then((res => {
+
+        let realNamesArray = res.data.user
+
+        finalNames.push(realNamesArray.map(function (name) {
+          return name['name']
+        }))
+
+        namesArray.push(finalNames)
+
       }))
-      
-    }))
   }
+
   console.log(finalNames);
 
-
-
-
-
-  
   const drawNames = (e) => {
     e.preventDefault()
-    console.log("hello");
+    getMemberNames();
+    console.log(namesArray);
   }
-  
+
 
   // Visual Rendering //
 
