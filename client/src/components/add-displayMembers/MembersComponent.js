@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
+import DeleteButton from "../deleteMemberBtn/DeleteButton"
 import { Card } from "react-bootstrap";
 import "./style.css"
 
@@ -30,7 +31,7 @@ const MembersComponent = (props) => {
 
   const addMember = (e) => {
     e.preventDefault();
-    setMember({...MemberString, [e.target.name]: null})
+    setMember({ ...MemberString, [e.target.name]: null })
     const groupId = pathname.split("/")[1];
     API.addMembers(MemberString, groupId)
       .catch(err => console.log(err));
@@ -48,6 +49,19 @@ const MembersComponent = (props) => {
       }))
   }
 
+  const deleteMember = (e) => {
+    e.preventDefault()
+   const userName = e.target.getAttribute("dataname");
+    console.log(userName)
+
+
+
+  }
+
+
+
+
+
   // Visual Rendering //
 
   return (
@@ -60,14 +74,17 @@ const MembersComponent = (props) => {
         <Card.Body>
           <Card.Title>Members:</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-              </Card.Subtitle>
+          </Card.Subtitle>
           <br></br>
           <form>
 
             {/* Name of Member  */}
 
-            {memberList && memberList.map(member => (
-              <p>{member.name}</p>
+            {memberList.map(member => (
+              <>
+                <p>{member.name}</p>
+                <DeleteButton name={member.name} onClick={deleteMember} />
+              </>
             ))}
 
             <h5>Add Person:</h5>
