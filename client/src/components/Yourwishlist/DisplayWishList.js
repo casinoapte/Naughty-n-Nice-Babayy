@@ -40,7 +40,13 @@ export default function DisplayWishList() {
         <Card.Body>
           <Card.Title>Member Draw:</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">***</Card.Subtitle>
-       
+          {namesArray.map((names) =>
+        <li>{names}</li>
+        )};
+
+          {result.map((santas) =>
+        <li>{santas}</li>
+        )};
           
           
 
