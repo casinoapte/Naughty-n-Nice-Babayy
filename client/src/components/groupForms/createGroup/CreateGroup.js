@@ -53,7 +53,7 @@ function CreateGroup() {
             id="group-card"
           >
             <Card.Body>
-              <Card.Title>Create a Secret Santa Group</Card.Title>
+              <Card.Title>Create Santa Group</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
                 Enter Details here
               </Card.Subtitle>
