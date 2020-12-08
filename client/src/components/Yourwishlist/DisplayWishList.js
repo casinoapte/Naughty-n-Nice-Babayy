@@ -26,6 +26,8 @@ export default function DisplayWishList() {
   // External JS functions //
   
   // Getting Member Names //
+
+  const finalNames =[]
   
   const getMemberNames = () => {
     const groupId = pathname.split("/")[1];
@@ -33,13 +35,13 @@ export default function DisplayWishList() {
     .then((res => {
       let realNamesArray = res.data.user
       
-      const finalNames = realNamesArray.map(function(name) {
+      finalNames.push(realNamesArray.map(function(name) {
         return name['name']
-      })
+      }))
       
-      console.log(finalNames);
     }))
   }
+  console.log(finalNames);
 
 
 
