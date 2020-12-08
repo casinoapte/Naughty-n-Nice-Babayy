@@ -20,7 +20,7 @@ Select the Heroku link listed in the Installation section, above. In the Naughty
 
 ##### Main Page:
 
-![Main](./client/public/assets/images/landing.png)
+![Main](./client/public/assets/images/main.png)
 
 ### License:
  This project is licensed under the MIT license.
