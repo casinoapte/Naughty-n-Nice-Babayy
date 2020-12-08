@@ -8,9 +8,6 @@ export default function DeleteButton(props) {
   const deleteMember = (e) => {
     let name = props
     console.log(name)
-
-
-
   }
 
 
