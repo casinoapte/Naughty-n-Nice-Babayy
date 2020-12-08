@@ -38,8 +38,7 @@ function CreateGroup() {
       GroupObject.name,
       GroupObject.password
     );
-    console.log(data);
-    let path = "/" + data._id + "/" + data.name;
+    let path = await "/" + data._id + "/" + data.name;
     history.push(path);
   };
 
