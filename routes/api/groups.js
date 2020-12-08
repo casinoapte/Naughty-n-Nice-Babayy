@@ -31,7 +31,7 @@ router.get("/:id", (req, res) => {
 
 
 router.put("/description/:id", (req, res) => {
-  db.Group.findByIdAndUpdate(req.params.id, { $push: req.body },{ new: true })
+  db.Group.findByIdAndUpdate(req.params.id, { $set: req.body }, { returnOriginal: false })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 });
