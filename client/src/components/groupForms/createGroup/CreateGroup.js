@@ -34,12 +34,10 @@ function CreateGroup() {
   const history = useHistory();
 
   const RouteChange = async () => {
-    console.log(GroupObject.name, GroupObject.password);
     const { data } = await API.findGroup(
       GroupObject.name,
       GroupObject.password
     );
-    await console.log(data);
     let path = await "/" + data._id + "/" + data.name;
     history.push(path);
   };
