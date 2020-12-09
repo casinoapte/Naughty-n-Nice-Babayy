@@ -46,7 +46,9 @@ export default {
 
 
 
-
+  deleteMember: function (groupId, memberId) {
+    return axios.put("/api/groups/delete/" + groupId, { memberId });
+  },
 
 
 

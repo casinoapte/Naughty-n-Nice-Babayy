@@ -1,34 +1,46 @@
-// import WishlistModal from './WishlistModal';
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import API from "../../utils/API"
 import { Card } from "react-bootstrap";
 import "./style.css";
 const secretSanta = require('secret-santa-generator');
 
 export default function DisplayWishList() {
-
+  
   // Use State and Hooks Setting //
-
-  const namesArray = ['Ryan', 'Casino', 'Colby', 'Charlie', 'Joshua', 'Shav']
-
+  
+  const { pathname } = useLocation();
+  
+  const [namesArray, setNameArray] = useState([])
+  // const namesArray = [];
   
   const namesTable = secretSanta.buildSecretSantaTable(namesArray)
   const result = Object.values(namesTable);
   
- 
- 
   
   // External JS functions //
   
-  const drawNames = (e) => {
-    e.preventDefault()
-    console.log("hello");
+  // Getting Member Names //
+  
+  const getMemberNames = () => {
+    const groupId = pathname.split("/")[1];
+    API.findGroup2(groupId)
+    .then((res => {
+      let realNamesArray = res.data.user;
+      const namesArray = []
+      const finalNames = realNamesArray.map(function(name) {
+        return name['name']
+      })
+      namesArray.push(...finalNames)
+      setNameArray(namesArray)
+    }))
   }
   
-
-
-
-
-
+  const drawNames = (e) => {
+    e.preventDefault()
+    getMemberNames();
+  }
+  
 
   // Visual Rendering //
 
@@ -42,6 +54,7 @@ export default function DisplayWishList() {
         <Card.Body>
           <Card.Title>Member Draw:</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">***</Card.Subtitle>
+
           {namesArray.map((names) =>
             <li className="draw-members-fixed">{names}</li>
           )}

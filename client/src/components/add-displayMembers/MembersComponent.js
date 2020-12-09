@@ -12,7 +12,9 @@ const MembersComponent = (props) => {
 
   const { pathname } = useLocation();
 
-  const [MemberString, setMember] = useState()
+  const [MemberString, setMember] = useState({
+    name: "",
+  })
 
   const [memberList, setMemberList] = useState([])
 
@@ -22,6 +24,7 @@ const MembersComponent = (props) => {
 
   const handleInputChange = (e) => {
     e.preventDefault()
+    console.log(e.target.name);
     setMember({ ...MemberString, [e.target.name]: e.target.value })
   }
 
@@ -31,10 +34,10 @@ const MembersComponent = (props) => {
 
   const addMember = (e) => {
     e.preventDefault();
-    setMember({ ...MemberString, [e.target.name]: null })
+    setMember({ ...MemberString, name: "" })
     const groupId = pathname.split("/")[1];
     API.addMembers(MemberString, groupId)
-        .catch(err => console.log(err));
+      .catch(err => console.log(err));
     retrieveMembers()
   }
 
@@ -49,6 +52,14 @@ const MembersComponent = (props) => {
       }))
   }
 
+  // Delete one member when they click on santa
+  const deleteMember = (e) => {
+    const memberId = e.target.dataset.id;
+    const groupId = pathname.split("/")[1];
+    API.deleteMember(groupId, memberId).then((res) => {
+      retrieveMembers();
+    })
+  }
 
   // Visual Rendering //
 
@@ -71,13 +82,13 @@ const MembersComponent = (props) => {
             {memberList.map(member => (
               <>
                 <h5>{member.name}
-                  <DeleteButton name={member.name} /></h5>
+                  <DeleteButton name={member.name} id={member.id} deleteMember={deleteMember} /></h5>
 
               </>
             ))}
 
             <h5>Add Person:</h5>
-            <input className="members-add-title" type="text" name="name" onChange={handleInputChange} />
+            <input className="members-add-title" type="text" name="name" value={MemberString.name} onChange={handleInputChange} />
 
             <br></br>
 

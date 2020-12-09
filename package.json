@@ -25,6 +25,7 @@
     "mongoose": "^5.3.16",
     "react-router-nomatch": "^2.0.1",
     "secret-santa-generator": "0.0.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "uuid": "^8.3.2"
   }
 }
