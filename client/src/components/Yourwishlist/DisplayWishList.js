@@ -1,5 +1,4 @@
-// import WishlistModal from './WishlistModal';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
 import { Card } from "react-bootstrap";
@@ -12,13 +11,11 @@ export default function DisplayWishList() {
   
   const { pathname } = useLocation();
   
-  let namesArray = []
+  const [namesArray, setNameArray] = useState([])
+  // const namesArray = [];
   
   const namesTable = secretSanta.buildSecretSantaTable(namesArray)
   const result = Object.values(namesTable);
-  console.log(result);
-  
-  
   
   
   // External JS functions //
@@ -29,26 +26,19 @@ export default function DisplayWishList() {
     const groupId = pathname.split("/")[1];
     API.findGroup2(groupId)
     .then((res => {
-      let realNamesArray = res.data.user
-      
+      let realNamesArray = res.data.user;
+      const namesArray = []
       const finalNames = realNamesArray.map(function(name) {
         return name['name']
       })
-      
-      
-      namesArray.push(finalNames)
+      namesArray.push(...finalNames)
+      setNameArray(namesArray)
     }))
   }
-
-
-
-
-
   
   const drawNames = (e) => {
     e.preventDefault()
     getMemberNames();
-    console.log(namesArray);
   }
   
 

@@ -1,34 +1,23 @@
-// import DescriptionModal from './DescriptionModal';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import API from "../../utils/API"
 import { Card } from "react-bootstrap";
 import "./style.css"
 export function descriptionAdd() { }
-
 export default function DescriptionComponent() {
-
   // Use State and Hooks Setting //
   const { pathname } = useLocation();
-
   const [DescriptionString, setDescriptionString] = useState()
-
   const [ShowDetails, SetDetails] = useState([])
-
   const handleInputChange = (e) => {
     e.preventDefault()
     setDescriptionString({ ...DescriptionString, [e.target.name]: e.target.value })
   }
-
   useEffect(() => {
     getDescription()
   }, [])
-
-
   // External JS functions //
-
   // Pushing Description Array in Group Database //
-
   const descriptionAdd = (e) => {
     e.preventDefault();
     const groupId = pathname.split("/")[1];
@@ -36,7 +25,6 @@ export default function DescriptionComponent() {
       .catch(err => console.log(err));
     getDescription()
   }
-
   const getDescription = (e) => {
     const groupId = pathname.split("/")[1];
     API.findGroup2(groupId)
@@ -45,10 +33,7 @@ export default function DescriptionComponent() {
         SetDetails(details)
       }))
   }
-
-
   // Visual Rendering //
-
   return (
     <div className="col-4">
       <Card
@@ -62,30 +47,20 @@ export default function DescriptionComponent() {
             ***
               </Card.Subtitle>
           <br></br>
-
           <h6 className="details-titles">Location: {ShowDetails.location}</h6>
           <h6 className="details-titles">Party Time: {ShowDetails.time}</h6>
           <h6 className="details-titles">Max Price: ${ShowDetails.price}</h6>
-
           <form>
-
             {/* Location  */}
-
             <h5 className="location-title">Location:</h5>
             <input type="text" name="location" onChange={handleInputChange}></input>
-
             {/* Time  */}
-
             <h5>Time:</h5>
             <input type="text" name="time" onChange={handleInputChange}></input>
-
             {/* Max Gift Price  */}
-
             <h5>Max Price ($):</h5>
             <input type="number" name="price" onChange={handleInputChange}></input>
-
             <br></br>
-
             <button
               className="add-member-button btn btn-primary"
               onClick={descriptionAdd}>
@@ -96,6 +71,4 @@ export default function DescriptionComponent() {
       </Card>
     </div>
   )
-
 }
-
