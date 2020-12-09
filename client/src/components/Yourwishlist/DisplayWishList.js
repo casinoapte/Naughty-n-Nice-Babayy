@@ -55,20 +55,35 @@ export default function DisplayWishList() {
           <Card.Title>Member Draw:</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">***</Card.Subtitle>
 
-          {namesArray.map((names) =>
-            <li className="draw-members-fixed">{names}</li>
-          )}
+          {/* <div className="card-columns">
+                </div> */}
+          <div className="card bg-light wishlist-card">
+            <div className="card-block">
+              <div className="row">
+                <div className="col">
+                  {namesArray.map((names) => (
+                    <p className="draw-members-fixed btn btn-dark ">
+                      {names}{" "}
+                    </p>
+                  ))}
+                </div>
+                <div className="col">
+                  {result.map((santas) => (
+                    <p className="draw-members-generate btn btn-dark bi bi-arrow-left-circle">
+                      {santas}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
 
-          {result.map((santas) =>
-            <li className="draw-members-generate">{santas}</li>
-          )}
-
-
-          <button className="create-group-button btn btn-primary" onClick={drawNames}>
+          <button
+            className="create-group-button btn btn-primary"
+            onClick={drawNames}
+          >
             Draw!
           </button>
-
-
         </Card.Body>
       </Card>
     </div>

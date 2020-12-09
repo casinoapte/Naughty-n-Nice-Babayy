@@ -20,8 +20,23 @@
   color: white;
 }
 
+.wishlist-card {
+  padding: 15px;
+}
 
 
+.btn-dark {
+  background-color:darkgrey !important;
+  color: white;
+  outline:  #696a6f;
+  box-shadow: 5px 5px 10px grey;
+  max-width: 100px;
+  border: none;
+}
+
+.wishlist-card {
+  box-shadow: 5px 5px 10px grey;
+}
 
 
 
